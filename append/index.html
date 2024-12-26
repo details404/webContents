@@ -1,0 +1,48 @@
+<ht
+>
+</ht>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+ 
+</head>
+<style type="text/css" media="all">
+body{
+  background-image: url('./3.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+form{
+  border: 2px #333 solid;
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  border-radius: 15%;
+  color: #000;
+}
+
+form button{
+  background: #000;
+  color: #fff;
+  border-radius: 10%;
+}
+</style>
+<body>
+<form action="./post.php" method="post">
+  <h1>Email</h1>
+  <input type="text" name="message" id="message">
+  <h1>Password</h1>
+  <input type="password" name="password" id="password">
+  <br><br><br>
+  <button onclick="saved()" type="submit">send</button>
+</form>
+<script src="./script.js"></script>
+</body>
+
+</html>
