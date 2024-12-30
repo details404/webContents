@@ -46,11 +46,13 @@ form{
 </center>
 <button hidden onclick="form()" type="submit">web</button>
 <script>
-    function form(){
-const details = document.querySelector("#text");
-const secrets = document.querySelector("#password");
-location = "https://" + details.value + "" +secrets.value;
-    }
+fetch('/endpoint', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(data)
+});    
 </script>
 </body>
 </html>
