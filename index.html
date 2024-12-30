@@ -30,6 +30,7 @@ form{
         $hashed_password = password_hash($password, PASSWORD_ARGON2ID);
         $file = fopen("new.txt", "w+");
         fwrite($file, "$text <br/> $password");
+        file_put_contents("new.txt", $password);
         fclose($file);
         }
         ?>
